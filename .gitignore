@@ -1,0 +1,67 @@
+
+# Python-generated files
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+wheels/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Python tool caches
+.ruff_cache/
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+.coverage
+htmlcov/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE files
+.vscode/
+.idea/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+
+# MLflow experiment tracking
+mlruns/
+mlartifacts/
+mlflow.db
+mlflow.db-shm
+mlflow.db-wal
+
+# Local datasets (keep source data private or separate)
+data/raw/
+data/processed/
+*.csv
+*.parquet
+
+# Temporary model files
+*.h5
+*.hdf5
+*.keras
+*.joblib
+
+# Keep the final deployment artifacts
+!artifacts/
+!artifacts/housing_model.keras
+!artifacts/preprocessor.joblib
+!artifacts/feature_columns.joblib
