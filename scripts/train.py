@@ -53,10 +53,8 @@ def main() -> None:
         pipeline=pipeline,
     )
 
-    evaluator.fit()
-    evaluator.predict()
-    evaluator.evaluate()
-
+    evaluator.fit().predict().evaluate()
+  
     scoring = {
         "r2": "r2",
         "rmse": "neg_root_mean_squared_error",
@@ -116,8 +114,7 @@ def main() -> None:
         pipeline,
     )
 
-    rf_evaluator.fit()
-    rf_evaluator.evaluate()
+    rf_evaluator.fit().evaluate()
 
     print(rf_evaluator.get_results())
 
@@ -138,11 +135,7 @@ def main() -> None:
     # Final evaluation of the selected Random Forest model
     print("\nFinal Random Forest held-out test evaluation:")
 
-    rf_evaluator.fit_final_model()
-    rf_evaluator.predict_final_test()
-    rf_evaluator.evaluate_final_test()
-
-    final_results = rf_evaluator.get_final_test_results()
+    final_results = rf_evaluator.fit_final_model().predict_final_test().evaluate_final_test().get_final_test_results()
 
     print(f"Test R²: {final_results['r2_score']:.4f}")
     print(f"Test RMSE: ${final_results['rmse']:,.2f}")

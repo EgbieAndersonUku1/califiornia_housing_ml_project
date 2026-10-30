@@ -83,10 +83,8 @@ def predict(features: HousingFeatures):
 
     # Convert the prediction back to US dollars.
     prediction = np.asarray(
-        pipeline.inverse_transform(
-            prediction_scaled.reshape(-1, 1)
-        )
-    ).ravel()[0]
+        pipeline.inverse_transform(prediction_scaled)
+    )
 
     return {
         "predicted_house_value": round(
